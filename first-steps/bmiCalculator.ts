@@ -47,6 +47,9 @@ const calculateBmi = (height: number , weight: number ) => {
         case IMC >= 40.00: {
             return "Obesity (morbid)"
         }
+        default: {
+            return "Invalid BMI value";
+        }
     }
 }
 
@@ -60,3 +63,5 @@ try {
     }
     console.log(errorMessage);
 }
+
+export default calculateBmi;
