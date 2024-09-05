@@ -28,16 +28,16 @@ const parseExerciseArgs = (args: string[]): { targetDailyHours: number, dailyExe
       targetDailyHours,
       dailyExerciseHours
   };
-}
+};
 
 const calculateExercises = (dailyExerciseHours: number[], targetDailyHours: number): Result => {
-    const periodLength = dailyExerciseHours.length
+    const periodLength = dailyExerciseHours.length;
     let trainingDays = 0;
     let suma = 0;
     let success = false;
 
     for (let i = 0; i < dailyExerciseHours.length; i++) {
-        suma += dailyExerciseHours[i]
+        suma += dailyExerciseHours[i];
         if (dailyExerciseHours[i] !== 0 ) {
           trainingDays += 1;
         }
@@ -45,7 +45,7 @@ const calculateExercises = (dailyExerciseHours: number[], targetDailyHours: numb
 
     const average = suma / periodLength;
     if (average >= targetDailyHours) {
-      success = true
+      success = true;
     }
 
     let rating = 1;
@@ -71,8 +71,8 @@ const calculateExercises = (dailyExerciseHours: number[], targetDailyHours: numb
       ratingDescription: ratingDescription,
       target: targetDailyHours,
       average: average,
-    }
-}
+    };
+};
 
 try {
   const { targetDailyHours, dailyExerciseHours } = parseExerciseArgs(process.argv);
