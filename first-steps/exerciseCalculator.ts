@@ -84,3 +84,5 @@ try {
       console.log('Unknown error occurred');
   }
 }
+
+export default calculateExercises;
